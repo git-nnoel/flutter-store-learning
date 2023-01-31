@@ -61,7 +61,20 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
-    - assets/images/bg.png
+    - assets/images/background.jpg
+    - assets/catalog/donuts/Bardera.png
+    - assets/catalog/donuts/Belgium.png
+    - assets/catalog/donuts/Boston-Cream.png
+    - assets/catalog/donuts/Choco-Orange.png
+    - assets/catalog/donuts/Coffee-Special.png
+    - assets/catalog/donuts/Homer-Simpson.png
+    - assets/catalog/donuts/Strawberry-Candy.png
+    - assets/catalog/donuts/The-Ring.png
+    - assets/catalog/donuts/Unicorn.png
+    - assets/catalog/drinks/Black-Walnut-Maple-Cappuccino.png
+    - assets/catalog/drinks/Expresso.png
+    - assets/catalog/drinks/Orange-Mulled-Cinder.png
+    - assets/catalog/drinks/The-Pingado.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

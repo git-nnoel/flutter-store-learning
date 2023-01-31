@@ -30,7 +30,7 @@ class _SignUpPanel extends State<SignUpPanel> {
     Size size = MediaQuery.of(context).size;
     return Container(
         width: size.width,
-        height: max(size.height - 180, 480),
+        height: max(size.height - 180, 650),
         alignment: Alignment.center,
         child: AspectRatio(
             aspectRatio: 2.0 / 3.0,
@@ -67,7 +67,7 @@ class _SignUpPanel extends State<SignUpPanel> {
                 ),
                 RoundedTextFieldComponent(
                   top: 215,
-                  width: max(size.height - 180, 480) * 0.667 - 110,
+                  width: max(size.height - 180, 650) * 0.667 - 110,
                   boxShadow: const <BoxShadow>[
                     BoxShadow(
                         color: Color.fromARGB(140, 20, 20, 20),
@@ -83,7 +83,7 @@ class _SignUpPanel extends State<SignUpPanel> {
                 ),
                 RoundedPassFieldComponent(
                   top: 270,
-                  width: max(size.height - 180, 480) * 0.667 - 110,
+                  width: max(size.height - 180, 650) * 0.667 - 110,
                   boxShadow: const <BoxShadow>[
                     BoxShadow(
                         color: Color.fromARGB(140, 20, 20, 20),
@@ -104,7 +104,7 @@ class _SignUpPanel extends State<SignUpPanel> {
                 ),
                 RoundedPassFieldComponent(
                   top: 325,
-                  width: max(size.height - 180, 480) * 0.667 - 110,
+                  width: max(size.height - 180, 650) * 0.667 - 110,
                   boxShadow: const <BoxShadow>[
                     BoxShadow(
                         color: Color.fromARGB(140, 20, 20, 20),
@@ -125,7 +125,7 @@ class _SignUpPanel extends State<SignUpPanel> {
                 ),
                 RoundedButtonComponent(
                   key: UniqueKey(),
-                  top: 405,
+                  top: 415,
                   height: 42,
                   width: 120,
                   label: "next step",
@@ -156,7 +156,7 @@ class _SignUpPanel extends State<SignUpPanel> {
                   ],
                 ),
                 RoundedButtonComponent(
-                  top: 460,
+                  top: 470,
                   height: 16,
                   width: 180,
                   label: "already have an account?",
@@ -168,6 +168,22 @@ class _SignUpPanel extends State<SignUpPanel> {
                   hoverFill: const Color.fromARGB(0, 196, 177, 10),
                   pressedFill: const Color.fromARGB(0, 255, 255, 255),
                   boxShadow: const [],
+                ),
+                Positioned(
+                  top: 560,
+                  child: Visibility(
+                      visible:
+                          (userFinalPassword.isEmpty || userFullname.isEmpty),
+                      child: const Text(
+                        'above fields fulfillment is required',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontStyle: FontStyle.italic,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Montserrat',
+                            color: Color.fromARGB(60, 255, 255, 255)),
+                      )),
                 ),
               ]),
             )));
@@ -182,16 +198,16 @@ class SignUp2Panel extends StatefulWidget {
   State<SignUp2Panel> createState() => _SignUp2Panel();
 }
 
-class _SignUp2Panel extends State<SignUp2Panel>{
-    String userEmail = '';
-    String userContactNumber = '';
+class _SignUp2Panel extends State<SignUp2Panel> {
+  String userEmail = '';
+  String userContactNumber = '';
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
         width: size.width,
-        height: max(size.height - 180, 480),
+        height: max(size.height - 180, 650),
         alignment: Alignment.center,
         child: AspectRatio(
             aspectRatio: 2.0 / 3.0,
@@ -215,13 +231,12 @@ class _SignUp2Panel extends State<SignUp2Panel>{
                       filterQuality: FilterQuality.high,
                       "../assets/images/logo.png"),
                 ),
-                const Positioned(
+                Positioned(
                   top: 130,
                   child: Text(
-                    'hello,\n'
-                    'name',
+                    'hello,\n${widget.user.fullName}',
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Color.fromARGB(255, 255, 255, 255),
                         fontSize: 16,
                         fontFamily: 'Montserrat',
@@ -230,7 +245,7 @@ class _SignUp2Panel extends State<SignUp2Panel>{
                 ),
                 RoundedTextFieldComponent(
                   top: 215,
-                  width: max(size.height - 180, 480) * 0.667 - 110,
+                  width: max(size.height - 180, 650) * 0.667 - 110,
                   boxShadow: const <BoxShadow>[
                     BoxShadow(
                         color: Color.fromARGB(140, 20, 20, 20),
@@ -248,7 +263,7 @@ class _SignUp2Panel extends State<SignUp2Panel>{
                 ),
                 RoundedTextFieldComponent(
                   top: 270,
-                  width: max(size.height - 180, 480) * 0.667 - 110,
+                  width: max(size.height - 180, 650) * 0.667 - 110,
                   boxShadow: const <BoxShadow>[
                     BoxShadow(
                         color: Color.fromARGB(140, 20, 20, 20),
@@ -260,13 +275,13 @@ class _SignUp2Panel extends State<SignUp2Panel>{
                   icon: const Icon(Icons.person),
                   onChanged: (value) {
                     setState(() {
-                    userContactNumber = value;
+                      userContactNumber = value;
                     });
                   },
                 ),
                 RoundedButtonComponent(
                   key: UniqueKey(),
-                  top: 405,
+                  top: 365,
                   height: 42,
                   width: 140,
                   label: "conclude register",
@@ -289,7 +304,7 @@ class _SignUp2Panel extends State<SignUp2Panel>{
                   ],
                 ),
                 RoundedButtonComponent(
-                  top: 460,
+                  top: 420,
                   height: 16,
                   width: 69,
                   label: "previous",
@@ -301,6 +316,21 @@ class _SignUp2Panel extends State<SignUp2Panel>{
                   hoverFill: const Color.fromARGB(0, 196, 177, 10),
                   pressedFill: const Color.fromARGB(0, 255, 255, 255),
                   boxShadow: const [],
+                ),
+                Positioned(
+                  top: 520,
+                  child: Visibility(
+                      visible: (userEmail.isEmpty || userContactNumber.isEmpty),
+                      child: const Text(
+                        'above fields fulfillment is required',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontStyle: FontStyle.italic,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Montserrat',
+                            color: Color.fromARGB(60, 255, 255, 255)),
+                      )),
                 ),
               ]),
             )));

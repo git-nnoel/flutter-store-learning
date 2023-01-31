@@ -4,6 +4,7 @@ import 'Model/user.dart';
 import 'Screens/Components/app_bar.dart';
 import 'Screens/Home/login_panel.dart';
 import 'Screens/Home/signup_panel.dart';
+import 'Screens/Main/catalog.dart';
 
 class InitialRouteQuery extends StatefulWidget {
   const InitialRouteQuery({Key? key}) : super(key: key);
@@ -21,11 +22,10 @@ class _InitialRouteQueryState extends State<InitialRouteQuery> {
       width: MediaQuery.of(context).size.width,
       decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("../assets/images/bg4.jpg"),
+              image: AssetImage("../assets/images/background.jpg"),
               fit: BoxFit.cover,
               opacity: 0.1),
-              color: Color.fromARGB(255, 44, 44, 44)
-              ),
+          color: Color.fromARGB(255, 44, 44, 44)),
       child: ListView(children: const <Widget>[
         CustomAppBar(),
         UnconstrainedBox(child: LoginPanel())
@@ -49,12 +49,12 @@ class _SignUpRouteQueryState extends State<SignUpRouteQuery> {
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
       decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("../assets/images/bg4.jpg"),
-              fit: BoxFit.cover,
-              opacity: 0.1),
-          color: Color.fromARGB(255, 44, 44, 44),
-          ),
+        image: DecorationImage(
+            image: AssetImage("../assets/images/background.jpg"),
+            fit: BoxFit.cover,
+            opacity: 0.1),
+        color: Color.fromARGB(255, 44, 44, 44),
+      ),
       child: ListView(children: const <Widget>[
         CustomAppBar(),
         UnconstrainedBox(child: SignUpPanel())
@@ -79,16 +79,41 @@ class _SignUp2QueryState extends State<SignUp2Query> {
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
       decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("../assets/images/bg4.jpg"),
-              fit: BoxFit.cover,
-              opacity: 0.1),
-          color: Color.fromARGB(255, 44, 44, 44),
-          ),
+        image: DecorationImage(
+            image: AssetImage("../assets/images/background.jpg"),
+            fit: BoxFit.cover,
+            opacity: 0.1),
+        color: Color.fromARGB(255, 44, 44, 44),
+      ),
       child: ListView(children: <Widget>[
         const CustomAppBar(),
         UnconstrainedBox(child: SignUp2Panel(user: widget.user))
       ]),
+    ));
+  }
+}
+
+class CatalogRouteQuery extends StatefulWidget {
+  const CatalogRouteQuery({Key? key}) : super(key: key);
+
+  @override
+  State<CatalogRouteQuery> createState() => _CatalogRouteQueryState();
+}
+
+class _CatalogRouteQueryState extends State<CatalogRouteQuery> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Container(
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
+      decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("../assets/images/background.jpg"),
+              fit: BoxFit.cover,
+              opacity: 0.1),
+          color: Color.fromARGB(255, 44, 44, 44)),
+      child: ListView(children: const <Widget>[CustomAppBar(), Catalog()]),
     ));
   }
 }

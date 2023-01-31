@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'Screens/Main/catalog.dart';
 import 'constant.dart';
 import 'responsive_media_query.dart';
 
@@ -28,7 +27,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/login': (context) => const InitialRouteQuery(),
           '/signup/': (context) => const SignUpRouteQuery(),
-          '/catalog': (context) => Catalog(), 
+          '/catalog': (context) => const CatalogRouteQuery(),
         });
   }
 }
